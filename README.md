@@ -1,3 +1,15 @@
+****Overview****
+The StoryApp workflow begins when a user creates a new job. Jobs have names, statuses, and
+are used to contain the images that will be used in one’s story. After creating a job, the individual
+uploads any number of local images into the client-side application. Once they are satisfied, the
+server asynchronously processes all these images in order to determine an accurate description of
+them using llama-3.211b. In this process, the images are also compressed and stored in S3.
+After all the images are processed, the user can generate a story; this results in the creation of a
+narrative that combines together the visual elements the user added with a story. These are
+combined together in a pdf, which is downloaded to the user’s directory locally
+
+
+
 ****Setting Up Server****
 
 This server uses the AWS Lambda Functions and API Endpoints. To properly set it up, three layers are required: one for pymysql, reportlab, and 
@@ -15,3 +27,4 @@ GET: /generate/{jobid} - final_generate
 
 Now that all the lambda functions are set up, simply build and run the Docker container. After which, the file main.py can be ran to interact
 with the server. # StoryMaker
+

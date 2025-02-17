@@ -1,0 +1,5 @@
+{
+  "pathParameters": {
+    "jobUUID": "27cbb92f-021c-4317-9e77-563b1a190bd2",
+  }
+}
